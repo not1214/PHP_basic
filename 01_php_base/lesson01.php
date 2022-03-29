@@ -12,4 +12,5 @@ $candy = 50;
 $sum = ($chocolate * 1) + ($candy * 3);
 
 // echo $sum.'円です。';
-echo "{$sum}円です。";
+// echo "{$sum}円です。";
+echo "$sum 円です。 ";
