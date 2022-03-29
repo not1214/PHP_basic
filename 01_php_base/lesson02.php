@@ -11,3 +11,14 @@
 // また最低限どういう値でテストすればいいか
 // 確認したテスト値をコメントアウトですべて示してください。
 
+$stdin = trim(fgets(STDIN));
+// echo $stdin;
+if ($stdin > 50) {
+    echo '50より大きい';
+} elseif ($stdin < 50) {
+    echo '50より小さい';
+} elseif ($stdin == 50) {
+    echo '50です';
+};
+
+// 試した値： 49,50,51
