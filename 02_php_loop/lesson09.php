@@ -19,6 +19,8 @@ $arr = [
   'r3' => ['c1' => 25, 'c2' => 9, 'c3' => 130]
 ];
 // echo count($arr);
+
+// 行の合計
 $row_sum = [];
 for ($i = 1; $i <= count($arr); $i++) {
     $sum = array_sum($arr["r{$i}"]);
@@ -26,6 +28,7 @@ for ($i = 1; $i <= count($arr); $i++) {
 }
 // print_r($row_sum);
 
+// 列の合計
 $column_sum = [];
 for ($i = 1; $i <= count($arr); $i++) {
     $sum = array_sum(array_column($arr, "c{$i}"));
@@ -33,6 +36,7 @@ for ($i = 1; $i <= count($arr); $i++) {
 }
 // print_r($column_sum);
 
+// 全合計
 $all_sum = array_sum($row_sum)
 
 ?>
