@@ -23,6 +23,19 @@ $product = 150; // 商品金額
 
 function calc($yen, $product) {
     // この関数内に処理を記述
+    $arr = [10000, 5000, 1000, 500, 100, 50, 10, 1];
+    $result = [];
+    if ($yen >= $product) {
+        $change = $yen - $product;
+        foreach ($arr as $value) {
+            $result[$value] = intdiv($change, $value);
+            $change -= $value * $result[$value];
+        }
+        return $result;
+    } else {
+        $lack = abs($product - $yen);
+        return $lack;
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -34,6 +47,25 @@ function calc($yen, $product) {
 <body>
     <section>
         <!-- ここに結果表示 -->
+        <?php
+        $yen = trim(fgets(STDIN));
+        $product = trim(fgets(STDIN));
+        
+        $result = calc($yen, $product);
+        if (is_array($result)) {
+            foreach ($result as $key => $value) {
+                if ($key == 10000 || $key == 5000 || $key == 1000) {
+                    echo "{$key}円札×{$value}枚、";
+                } elseif ($key == 1) {
+                    echo "{$key}円玉×{$value}枚。";
+                } else {
+                    echo "{$key}円玉×{$value}枚、";
+                }
+            }
+        } else {
+            echo "{$result}円足りません。\n";
+        }
+        ?>
     </section>
 </body>
 </html>

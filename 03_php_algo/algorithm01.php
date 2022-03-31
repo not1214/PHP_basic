@@ -29,6 +29,15 @@
 function nabeatsu($i)
 {
     // この関数内に処理を記述
+    if (($i % 3 == 0) && ($i % 5 == 0)) {
+        return "{$i} アホわん\n";
+    } elseif ($i % 3 == 0) {
+        return "{$i} アホ\n";
+    } elseif ($i % 5 == 0) {
+        return "{$i} わん\n";
+    } else {
+        return $i."\n";
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -40,6 +49,12 @@ function nabeatsu($i)
 <body>
     <section>
         <!-- ここに結果表示 -->
+        <?php
+        $num = trim(fgets(STDIN));
+        for ($i = 1; $i <= $num; $i++) {
+            echo nabeatsu($i);
+        }
+        ?>
     </section>
 </body>
 </html>
