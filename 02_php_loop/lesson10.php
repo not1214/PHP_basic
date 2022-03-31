@@ -21,6 +21,20 @@ $arr = [99, 3, 12, 45, 60, 100, 31, 7, 28];
 $arr = [99, 3, 12, 45, 60, 100, 31, 7, 28];
 
 // ここで並び替え処理
+$escape;
+for ($i = 0; $i < count($arr); $i++) {
+    for ($j = 1; $j < count($arr); $j++) {
+        // echo $i.$j."\n";
+        if ($arr[$j-1] > $arr[$j]) {
+            $escape = $arr[$j];
+            $arr[$j] = $arr[$j-1];
+            $arr[$j-1] = $escape;
+        }
+    }
+}
+
+print_r($arr);
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -30,5 +44,9 @@ $arr = [99, 3, 12, 45, 60, 100, 31, 7, 28];
 </head>
 <body>
     <!-- ここに並び替え後を表示 -->
+    <?php
+      $result = implode(", ", $arr);
+      echo $result."\n";
+    ?>
 </body>
 </html>
