@@ -3,6 +3,7 @@
 // デバック練習
 // 氏名入力時に入力内容が表示されるようにプログラムを完成させてください。
 
+
 $createAgeGroup = function () {
     $maxAge = 70;
     $minAge = 18;
@@ -48,7 +49,7 @@ class SelfIntroduction
     }
 }
 
-if (! empty($_POST)) {
+if (!empty($_POST)) {
     $selfIntroduction = new SelfIntroduction(
         $lastName         = $_POST['last_name'],
         $firstName        = $_POST['first_name'],
